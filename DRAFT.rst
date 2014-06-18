@@ -11,7 +11,10 @@ sudo apt-get install python3-pip python-virtualenv python3-numpy
 
 
 # but along with lots of mess
-sudo apt-get build-deps python3-numpy
+# sudo apt-get build-deps python3-numpy
+
+pip3 wheel --wheel-dir=/home/vagrant/wheelhouse numpy
+pip install --use-wheel --no-index --find-links=/home/vagrant/wheelhouse numpy
 
 http://python-packaging-user-guide.readthedocs.org/en/latest/tutorial.html#virtual-environments
 
