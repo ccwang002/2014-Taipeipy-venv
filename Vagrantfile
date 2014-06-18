@@ -10,19 +10,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # please see the online documentation at vagrantup.com.
 
   # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.define "ubuntu" do |ubuntu|
-    ubuntu.vm.box = "ubuntu/trusty64"
-  end
+  config.vm.box = "debian80"
+  config.vm.box_url = "https://downloads.sourceforge.net/project/vagrantboxjessie/debian80.box"
+  config.vm.provision "shell", path: "vagrant_setup.sh"
 
-  config.vm.define "debian" do |debian|
-    debian.vm.box = "jessie80"
-    debian.vm.box_url = "https://downloads.sourceforge.net/project/vagrantboxjessie/debian80.box"
-    debian.vm.provision "shell", path: "vagrant_setup.sh"
-  end
-
-  config.vm.define "centos" do |centos|
-    centos.vm.box = "chef/centos-6.5"
-  end
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
   # `vagrant box outdated`. This is not recommended.
