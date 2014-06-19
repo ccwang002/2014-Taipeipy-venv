@@ -6,7 +6,7 @@ apt-get update
 # apt-get -y autoremove
 
 # python stuff
-apt-get install -y python3-pip python-virtualenv python3-numpy
+apt-get install -y python3-pip python-virtualenv python3-numpy git-core
 # apt-get build-dep -y python3-numpy
 
 cat >> /home/vagrant/.profile <<EOF
