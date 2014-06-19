@@ -252,9 +252,85 @@
 
     <section id="python-env" class="slide"><div>
       <h2>Python 基本的環境</h2>
-      <p>你需要 Python + Setuptools + Pip，底下用 Python 3.4 舉例</p>
+      <p class="tighter">你需要 Python + Setuptools + Pip，底下用 Python 3.4 舉例</p>
 <pre class="language-bash">
-<code>sudo apt-get install python3 python3-pip</code></pre>
+<code>sudo apt-get install python3 python3-pip
+pip3 freeze
+# requests==2.3.0
+# wheel==0.23.0
+# ... 這些是系統有用到的套件</code></pre>
+    </div></section>
+
+    <section id="pkg-install" class="slide"><div>
+      <h2>Python 套件安裝</h2>
+      <ul>
+        <li>正常來說用 <code>pip install</code></li>
+        <li class="next">但例如裝 Numpy，在座各位有誰能把握用 pip install numpy 就搞定？</li>
+        <li class="next">所以在立場上，pip 會與 OS Distro 套件維護者有所衝突</li>
+        <li class="next">在 Debian 上，常用的套件都有變成 Debian 套件（ python3-pip ipython3 python3-numpy）</li>
+      </ul>
+    </div></section>
+
+    <section id="deb-main" class="slide"><div>
+      <h2>由 Debian 維護，(但) …</h2>
+      <ul>
+        <li>都是大大</li>
+        <li>夠穩定</li>
+        <li>要小心不要用 <code>sudo pip uninstall …</code></li>
+        <li>更不要再用 <code>sudo pip install …</code> 試圖掩拭</li>
+        <li>會讓 apt 很困擾</li>
+      </ul>
+    </div></section>
+
+    <section id="venv-benefit" class="slide"><div>
+      <h2>使用虛擬環境 virtualenv</h2>
+      <ul>
+        <li>與世隔絕，整個 Python 架構超然於某個資料夾中</li>
+        <li>使用套件 <a href="http://virtualenv.readthedocs.org/en/latest/">virtualenv</a></li>
+      </ul>
+    </div></section>
+
+    <section id="pyenv" class="slide"><div>
+      <h2>有人會提到 pyvenv</h2>
+      <ul>
+        <li>可以用，但是 3.4+ 限定</li>
+        <li>3.3 的 pyvenv 就洗洗睡吧</li>
+        <li>3.3 不會複製 pip, setuptools 相當麻煩</li>
+        <li>3.4 有個模組 ensurepip 確保系統一定要有 pip (PEP453)</li>
+      </ul>
+    </div></section>
+
+    <section id="pyvenv-bug" class="slide"><div>
+      <img src="pics/pyvenv_bug.png" alt="">
+      <ul>
+        <li>ensurepip 根本不會被預設安裝</li>
+        <li>系統維護者與 Python 開發者的立場衝突</li>
+        <li>這個問題在很多系統上還是有</li>
+        <li>但未來相當看好，用法與 virtualenv 相容</li>
+      </ul>
+    </div></section>
+
+    <section id="venv-use" class="slide"><div>
+      <h2>Virtualenv 使用</h2>
+        <pre class="lanuage-bash">
+<code>sudo apt-get install python-virtualenv  # 裝在 2.7 上
+virtualenv venv_foo  # 建立一個超然的資料夾
+source venv_foo/bin/active
+(venv_foo)   # 會在虛擬環境裡
+(venv_foo) deactivate
+
+virtualenv -p /path/to/python2.7  # 指定不同的 python 位置
+</code></pre>
+    </div></section>
+
+    <section id="then" class="slide"><div>
+      <h2>獨立之後…然後咧</h2>
+      <ul>
+        <li class="next"><del>就不會打過來嗎？</del></li>
+        <li class="next">這樣就會裝 numpy 了嗎？</li>
+        <li class="next">根本的問題沒有很順利的解決，裝套件還是很難</li>
+        <li class="next">能不能用系統的來複製？</li>
+      </ul>
     </div></section>
 
     <section id="pyenv-cover" class="slide cover w" ><div>
