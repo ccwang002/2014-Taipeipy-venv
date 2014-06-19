@@ -58,7 +58,7 @@ Put the following lines in ``~/.profile``
 .. code-block::
 
     pyenv install -l | grep 3.3
-    sudo apt-get build-dep python3.3 python2.6.9
+    sudo apt-get build-dep python3.3 python2.7
     pyenv install 3.3.5
     pyenv install 2.7.7
     pyenv rehash

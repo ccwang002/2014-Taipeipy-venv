@@ -2,12 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>Data Science Intro, Liang Bo Wang</title>
+    <title>Python 虛擬環境 101, Liang Bo Wang</title>
     <meta name="viewport" content="width=792, user-scalable=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
     <!-- Icon -->
-    <link href="pics/favicon.ico" rel="icon" type="image/x-icon" />
+    <link href="pics/favicon.png" rel="icon" type="image/x-icon" />
 
     <!-- MathJax -->
     <!-- CSS Stle -->
@@ -108,13 +108,12 @@
     <!-- Header in overview -->
     <header class="caption">
       <div style="overflow: auto; vertical-align: middle; position: relative;">
-        <img style="float: left; padding-right: 30px; width: 150px;" src="pics/twR_logo.png" alt="">
+        <img style="float: left; padding-right: 30px; width: 150px;" src="pics/pyconapac_logo.png" alt="">
         <div style="">
           <h1>
-            Data Science Introduction
+            Python 虛擬環境 101
           </h1>
-          <p style="line-height: 32px; padding-top:15px;">王亮博（亮亮）2014-06-xx</p>
-          <p style="line-height: 32px;">From Taiwan R User Group, more info on <a href="http://www.meetup.com/Taiwan-R/" target="_blank">Meetup</a>.</p>
+          <p style="line-height: 32px; padding-top:15px;">王亮博（亮亮）2014-06-19</p>
         </div>
       </div>
     </header>
@@ -122,10 +121,10 @@
 
     <!-- Cover slide -->
     <section id="cover" class="slide cover w"><div>
-        <h3>Foxconn, 2014-06-xx</h3>
+        <h3>Taipei.py, 2014-06-19</h3>
         <h2>
-          Data Science Introduction<br>
-          R/Python/Vis</h2>
+          Python 虛擬環境 101
+        </h2>
         <p class="author">
           <a href="http://about.me/lbwang" target="_blank">王亮博 (亮亮)</a>
           <br>Shared under CC 4.0 BY license
@@ -138,7 +137,7 @@
       </div>
       <style>
         #cover h2 {
-          margin: 0 0 0 -20px;
+          margin: 80px 0 0 -20px;
           color: #D91A3C;
           width: 500px;
           font-size: 90px;
@@ -194,16 +193,13 @@
     <section id="about-me" class="slide"><div>
         <h2>About Me</h2>
         <ul>
+          <li>不要問我為什麼<br>但大學開始大家都叫我亮亮</li>
           <li>Master student at <br />
             Bioinfo &amp; Biostat Core Lab, NTU CGM</li>
           <li>R / Python. Learning to speak DNA</li>
           <li>Taiwan R (MLDM) co-organizer</li>
-          <li>PyCon APAC 2014 staff and speaker of
-            <ul>
-              <li><a href="http://blog.liang2.tw/2014-pyR-stat/">Statistics in Python with R</a></li>
-              <li><a href="http://blog.liang2.tw/2014-handy-dist-computing/">Handy Parallel(Distributed)<br>Computing in Python</a></li>
-            </ul>
-          </li>
+          <li>PyCon APAC 2014 staff and speaker</li>
+          <li class="next">最近準備投誠 <span class="next">Windows 陣營</span></li>
         </ul>
         <img id="protrait" src="pics/me.jpg" alt="">
       </div>
@@ -216,12 +212,50 @@
       </style>
     </section>
 
-    <section id="why-cover" class="slide cover w" ><div>
-        <h2>Why and how?</h2>
+    <section id="why-101" class="slide"><div>
+        <h2>Why 101?</h2>
+        <ul>
+          <li>這是一個很初步的介紹</li>
+          <li class="next">很多東西不能問，很可怕 xd<br>
+            <span class="next">（上次有人這麼做，結果就讓前面這個人掛在台上，很不方便）</span></li>
+          <li>會用為今天的目標</li>
+          <li class="next">後面的講題很精采，我也很想聽 xd</li>
+        </ul>
+    </div></section>
+
+    <section id="challenge" class="slide"><div>
+      <h2>相信很多人覺得很簡單</h2>
+      <ul class="tighter">
+        <li>為了怕大家太無聊</li>
+        <li>打開你的 Windows 系統</li>
+        <li>把接下來的所有步驟在 Windows 上操作一遍吧</li>
+      </ul>
+      <figure class="next">
+        <blockquote>
+          <p>Life is harder on Windows ... By PyConAPAC 2015, do <b class="red">one</b> thing with Python that you've never done before.</p>
+        </blockquote>
+        <figcaption>Jessica McKellar, PyCon APAC 2014</figcaption>
+      </figure>
+    </div></section>
+
+    <section id="vagrant" class="slide"><div>
+        <h2>Q 如果在○○系統上要怎麼安裝？</h2>
+        <p class="tighter">這問題很難又很好回答……先用 Vagrant 開虛擬機</p>
+        <ul>
+          <li>點選右上角的 <a href="https://github.com/ccwang002/2014-Taipeipy-venv">Fork me</a> 把這份投影片 clone 下來</li>
+          <li>安裝好 <a href="https://www.virtualbox.org/">VirtualBox</a> 與 <a href="http://www.vagrantup.com/">Vagrant</a></li>
+          <li>在 Windows 上你會需要用個 Git Bash，或參考<a href="http://blog.liang2.tw/ngs-vm/">這邊教學</a></li>
+          <li><code>vagrant up</code> 搞定</li>
+          <li>這邊用的是 Debian 8 (Jessie)，Ubuntu 上操作通用</li>
+        </ul>
+    </div></section>
+
+    <section id="pyenv-cover" class="slide cover w" ><div>
+        <h2>World of pyenv</h2>
         <img src="pics/mid.jpg" alt="">
       </div>
       <style>
-        #why-cover h2 {
+        #pyenv-cover h2 {
           margin: 0px 0 0px;
           color: #D91A3C;
           text-align: left;
@@ -229,17 +263,12 @@
           line-height: 1.2em;
           opacity: 0.8;
           position: absolute;
-          bottom: 160px;
+          bottom: 180px;
           left: 80px;
         }
       </style>
     </section>
 
-    <section id="test-twitter" class="slide"><div>
-        <h2>Challenge accepted : )</h2>
-        <blockquote class="twitter-tweet" lang="en"><p>“by <a href="https://twitter.com/search?q=%23PyConAPAC&amp;src=hash">#PyConAPAC</a> 2015, do 1 THING with Python that you&#39;ve never done before” here comes <a href="https://twitter.com/jessicamckellar">@jessicamckellar</a> challenge</p>&mdash; Keith Yang (@keitheis) <a href="https://twitter.com/keitheis/statuses/467846318216318976">May 18, 2014</a></blockquote>
-        <script async src="http://platform.twitter.com/widgets.js" charset="utf-8"></script>
-    </div></section>
     <!-- End Slide -->
     <section id='end' class='slide cover shout w'><div>
         <h2>Thank You!</h2>
@@ -261,7 +290,7 @@
     </style></section>
 
     <!-- END OF SLIDE CONTENT -->
-    <p class="badge"><a href="https://github.com/ccwang002/2014-FXN-datasci" target="_blank">Fork me on Github</a></p>
+    <p class="badge"><a href="https://github.com/ccwang002/2014-Taipeipy-venv" target="_blank">Fork me on Github</a></p>
     <div class="progress"><div></div></div>
 
     <!-- Library -->
