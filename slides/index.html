@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Data Science Intro, Liang Bo Wang</title>
+    <meta name="viewport" content="width=792, user-scalable=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- Icon -->
+    <link href="pics/favicon.ico" rel="icon" type="image/x-icon" />
+
+    <!-- MathJax -->
+    <!-- CSS Stle -->
+    <link rel="stylesheet" href="lib/shower/themes/ribbon/styles/screen.css">
+    <link rel="stylesheet" href="lib/highlight/styles/tomorrow.css" type="text/css"/>
+    <style type="text/css" media="all">
+
+      /* clean table */
+    table.clean td img {
+      vertical-align: top;
+    }
+    table.clean td {
+      background: none;
+    }
+
+    h2.tighter {
+      margin: -40px 0 20px;
+    }
+
+    /* tighter paragraph */
+    p.tighter {
+      margin: 0 0 25px;
+    }
+
+    /* tighter code */
+    pre.tighter {
+      margin: 0 0 20px;
+    }
+
+    pre.full-page {
+      margin: -60px 0 0;
+    }
+    /* inline */
+    p.inline {
+      margin-bottom: 0px;
+    }
+
+    ul.tighter {
+      margin-bottom: 25px;
+    }
+
+    /* smaller code */
+    pre.small code {
+      font-size: 16px;
+      line-height: 2em;
+    }
+
+    .grey {
+      color: #BBB;
+    }
+    .red {
+      color: #D91A3C;
+    }
+    .blue {
+      color: #0376A6;
+    }
+
+    /* source link */
+    div.ref-img p.src-link {
+      position: relative;
+      font-size: 14px;
+      text-align: right;
+      bottom: 10px;
+      right: 10px;
+    }
+
+    /* two column slides */
+    section.slide.twocol div.left {
+      width: 50%;
+      float: left;
+    }
+    section.slide.twocol div.right {
+      width: 50%;
+      float: right;
+    }
+
+    section.slide.twocol-ll div.left {
+      width: 65%;
+      float: left;
+    }
+    section.slide.twocol-ll div.right {
+      width: 35%;
+      float: right;
+    }
+
+    section.slide.twocol-lr div.left {
+      width: 35%;
+      float: left;
+    }
+    section.slide.twocol-lr div.right {
+      width: 65%;
+      float: right;
+    }
+    </style>
+
+  </head>
+  <body class="list">
+    <!-- Header in overview -->
+    <header class="caption">
+      <div style="overflow: auto; vertical-align: middle; position: relative;">
+        <img style="float: left; padding-right: 30px; width: 150px;" src="pics/twR_logo.png" alt="">
+        <div style="">
+          <h1>
+            Data Science Introduction
+          </h1>
+          <p style="line-height: 32px; padding-top:15px;">王亮博（亮亮）2014-06-xx</p>
+          <p style="line-height: 32px;">From Taiwan R User Group, more info on <a href="http://www.meetup.com/Taiwan-R/" target="_blank">Meetup</a>.</p>
+        </div>
+      </div>
+    </header>
+    <!-- START OF SLIDE CONTENT -->
+
+    <!-- Cover slide -->
+    <section id="cover" class="slide cover w"><div>
+        <h3>Foxconn, 2014-06-xx</h3>
+        <h2>
+          Data Science Introduction<br>
+          R/Python/Vis</h2>
+        <p class="author">
+          <a href="http://about.me/lbwang" target="_blank">王亮博 (亮亮)</a>
+          <br>Shared under CC 4.0 BY license
+        </p>
+        <p id="usage-instr">
+          <kbd>Esc</kbd> to overview <br />
+          <kbd>←</kbd> <kbd>→</kbd> to navigate
+        </p>
+        <img src="pics/cover.jpg" alt="">
+      </div>
+      <style>
+        #cover h2 {
+          margin: 0 0 0 -20px;
+          color: #D91A3C;
+          width: 500px;
+          font-size: 90px;
+          line-height: 1.1em;
+          opacity: 0.8;
+        }
+        #cover h3 {
+          margin: -100px 0 0px;
+          color: #0376A6;
+          text-align: center;
+          font-size: 32px;
+          opacity: 0.3;
+        }
+        #cover p {
+          margin: 30px 0 0px;
+          color: #FFFA20;
+          font-size: 32px;
+          opacity: 0.8;
+        }
+        #cover p.author {
+          margin-left: -20px;
+          position: absolute;
+          bottom: 80px;
+          font-size: 36px;
+        }
+        #cover p a {
+          color: #FFFA20;
+          background: linear-gradient(to top, #FFFA20, #FFFA20 0.09em, transparent 0.09em, transparent) repeat-x scroll 0% 0% transparent;
+        }
+        #usage-instr {
+          position: absolute;
+          text-align: right;
+          right: 30px;
+          bottom: 20px;
+        }
+        #usage-instr kbd {
+          opacity: 0.8;
+          color: #D91A3C;
+        }
+        #cover .src-link {
+          position: absolute;
+          font-size: 14px;
+          text-align: right;
+          bottom: 10px;
+          right: 10px;
+        }
+        #cover img {
+          opacity: 1;
+        }
+      </style>
+    </section>
+
+    <section id="about-me" class="slide"><div>
+        <h2>About Me</h2>
+        <ul>
+          <li>Master student at <br />
+            Bioinfo &amp; Biostat Core Lab, NTU CGM</li>
+          <li>R / Python. Learning to speak DNA</li>
+          <li>Taiwan R (MLDM) co-organizer</li>
+          <li>PyCon APAC 2014 staff and speaker of
+            <ul>
+              <li><a href="http://blog.liang2.tw/2014-pyR-stat/">Statistics in Python with R</a></li>
+              <li><a href="http://blog.liang2.tw/2014-handy-dist-computing/">Handy Parallel(Distributed)<br>Computing in Python</a></li>
+            </ul>
+          </li>
+        </ul>
+        <img id="protrait" src="pics/me.jpg" alt="">
+      </div>
+      <style>
+        #protrait {
+          position: absolute;
+          right: 120px;
+          top: 120px;
+        }
+      </style>
+    </section>
+
+    <section id="why-cover" class="slide cover w" ><div>
+        <h2>Why and how?</h2>
+        <img src="pics/mid.jpg" alt="">
+      </div>
+      <style>
+        #why-cover h2 {
+          margin: 0px 0 0px;
+          color: #D91A3C;
+          text-align: left;
+          font-size: 100px;
+          line-height: 1.2em;
+          opacity: 0.8;
+          position: absolute;
+          bottom: 160px;
+          left: 80px;
+        }
+      </style>
+    </section>
+
+    <section id="test-twitter" class="slide"><div>
+        <h2>Challenge accepted : )</h2>
+        <blockquote class="twitter-tweet" lang="en"><p>“by <a href="https://twitter.com/search?q=%23PyConAPAC&amp;src=hash">#PyConAPAC</a> 2015, do 1 THING with Python that you&#39;ve never done before” here comes <a href="https://twitter.com/jessicamckellar">@jessicamckellar</a> challenge</p>&mdash; Keith Yang (@keitheis) <a href="https://twitter.com/keitheis/statuses/467846318216318976">May 18, 2014</a></blockquote>
+        <script async src="http://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div></section>
+    <!-- End Slide -->
+    <section id='end' class='slide cover shout w'><div>
+        <h2>Thank You!</h2>
+        <img src="pics/end.jpg" alt="">
+      </div>
+      <style>
+        #end h2 {
+          position: absolute;
+          text-align: left;
+          left: 560px;
+          top: 240px;
+          color: #FFF;
+          font-size: 100px;
+          opacity: 0.8;
+        }
+        #end img {
+          opacity: 0.9;
+        }
+    </style></section>
+
+    <!-- END OF SLIDE CONTENT -->
+    <p class="badge"><a href="https://github.com/ccwang002/2014-FXN-datasci" target="_blank">Fork me on Github</a></p>
+    <div class="progress"><div></div></div>
+
+    <!-- Library -->
+    <script src="lib/highlight/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <script src="lib/shower/shower.min.js"></script>
+    <!-- Mathjax -->
+    <!-- During local development, use localhost mathjax for speed-->
+    <!--<script src="file:///Users/liang/.ipython/profile_default/static/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>-->
+    <!-- online Mathjax CDN -->
+    <!--
+    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    -->
+  </body>
+</html>
